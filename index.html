@@ -17,68 +17,70 @@
   </head>
   <body>
     <main id="app">
-      <section class="intro">
-        <figure>
-          <img
-            src="assets/nigeria.svg"
-            alt="picture of nigerian flag"
-            width="100"
-          />
-        </figure>
-        <h3 class="intro__title">Army vs Terrorist</h3>
-        <h5>
-          Bokoharam terrorists are waging war. Its up to you as the nigerian
-          police to stop them
-        </h5>
-      </section>
+      <template v-if="page">
+        <section class="intro">
+          <figure>
+            <img
+              src="assets/nigeria.svg"
+              alt="picture of nigerian flag"
+              width="100"
+            />
+          </figure>
+          <h3 class="intro__title">Army vs Terrorist</h3>
+          <h5>
+            Bokoharam terrorists are waging war. Its up to you as the nigerian
+            police to stop them
+          </h5>
+        </section>
 
-      <section class="players">
-        <div class="players__container">
-          <figure>
-            <img
-              src="assets/soldier.svg"
-              alt="picture of army man"
-              width="100"
-            />
-          </figure>
-          <h2>Nigerian Army</h2>
-          <p>Life Points: {{armyLifePoints}}</p>
-        </div>
-        <div><h2 class="players__vs">VS</h2></div>
-        <div class="players__container">
-          <figure>
-            <img
-              src="assets/terrorist.svg"
-              alt="picture of terrorist"
-              width="100"
-            />
-          </figure>
-          <h2>Boko Haram</h2>
-          <p>Life Points: {{terroristLifePoints}}</p>
-        </div>
-      </section>
-      <section class="actions">
-        <div class="action__start">
-          <button
-            @click="startGame = !startGame"
-            v-show="startGame"
-            class="btn btn--green"
-          >
-            Start Game 😁
-          </button>
-        </div>
-        <div class="actions__buttons" v-if="!startGame">
-          <button class="btn btn--blue" @click="g36c">G36C</button>
-          <button class="btn btn--blue" @click="desertEagle">
-            Desert Eagle
-          </button>
-          <button class="btn btn--green" @click="heal">Heal</button>
-          <button class="btn btn--red" @click="tacticalNuke">
-            Tactical Nuke😱
-          </button>
-          <button class="btn btn--warn">Give Up 😭</button>
-        </div>
-      </section>
+        <section class="players">
+          <div class="players__container">
+            <figure>
+              <img
+                src="assets/soldier.svg"
+                alt="picture of army man"
+                width="100"
+              />
+            </figure>
+            <h2>Nigerian Army</h2>
+            <p>Life Points: {{armyLifePoints}}</p>
+          </div>
+          <div><h2 class="players__vs">VS</h2></div>
+          <div class="players__container">
+            <figure>
+              <img
+                src="assets/terrorist.svg"
+                alt="picture of terrorist"
+                width="100"
+              />
+            </figure>
+            <h2>Boko Haram</h2>
+            <p>Life Points: {{terroristLifePoints}}</p>
+          </div>
+        </section>
+        <section class="actions">
+          <div class="action__start">
+            <button
+              @click="startGame = !startGame"
+              v-show="startGame"
+              class="btn btn--green"
+            >
+              Start Game 😁
+            </button>
+          </div>
+          <div class="actions__buttons" v-if="!startGame">
+            <button class="btn btn--blue" @click="g36c">G36C</button>
+            <button class="btn btn--blue" @click="desertEagle">
+              Desert Eagle
+            </button>
+            <button class="btn btn--green" @click="heal">Heal</button>
+            <button class="btn btn--red" @click="tacticalNuke">
+              Tactical Nuke😱
+            </button>
+            <button class="btn btn--warn" @click="giveUp">Give Up 😭</button>
+          </div>
+        </section>
+      </template>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
