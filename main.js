@@ -28,9 +28,9 @@ new Vue({
       this.page = !this.page;
       setTimeout(() => {
         alert(
-          'You actual used the nuke. You broke the game. Kindly refresh to reset'
+          'You actually used the nuke. You broke the game. Kindly refresh to reset'
         );
-      }, 3);
+      }, 3000);
     },
     giveUp: function() {
       this.reset();
