@@ -43,15 +43,18 @@
 .action__start {
   display: flex;
   justify-content: center;
+  transition: display 2s;
 }
 .actions__buttons {
   display: flex;
   justify-content: space-around;
+  transition: display 2s;
 }
 
 .btn {
   padding: 10px 30px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn--green {
