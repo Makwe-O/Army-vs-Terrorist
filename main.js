@@ -35,6 +35,7 @@ new Vue({
     giveUp: function() {
       this.reset();
       alert('You Scumbag, you gave up. You are a disgrace to you country');
+      this.startGame = true;
     }
   },
   watch: {

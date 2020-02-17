@@ -14,6 +14,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="main.css" />
+
     <title>Army vs Terrorist</title>
   </head>
   <body>
@@ -60,26 +61,24 @@
           </div>
         </section>
         <section class="actions">
-          <div class="action__start">
-            <button
-              @click="startGame = !startGame"
-              v-show="startGame"
-              class="btn btn--green"
-            >
-              Start Game 😁
-            </button>
-          </div>
-          <div class="actions__buttons" v-show="!startGame">
-            <button class="btn btn--blue" @click="g36c">G36C</button>
-            <button class="btn btn--blue" @click="desertEagle">
-              Desert Eagle
-            </button>
-            <button class="btn btn--green" @click="heal">Heal</button>
-            <button class="btn btn--red" @click="tacticalNuke">
-              Tactical Nuke😱
-            </button>
-            <button class="btn btn--warn" @click="giveUp">Give Up 😭</button>
-          </div>
+          <transition name="fade" mode="out-in" appear>
+            <div class="action__start" v-if="startGame" key="startGame">
+              <button @click="startGame = !startGame" class="btn btn--green">
+                Start Game 😁
+              </button>
+            </div>
+            <div class="actions__buttons" v-else key="showButton">
+              <button class="btn btn--blue" @click="g36c">G36C</button>
+              <button class="btn btn--blue" @click="desertEagle">
+                Desert Eagle
+              </button>
+              <button class="btn btn--green" @click="heal">Heal</button>
+              <button class="btn btn--red" @click="tacticalNuke">
+                Tactical Nuke😱
+              </button>
+              <button class="btn btn--warn" @click="giveUp">Give Up 😭</button>
+            </div>
+          </transition>
         </section>
         <p class="footer">Made with ❤ by mmakwe onyeka</p>
       </template>
